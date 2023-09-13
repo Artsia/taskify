@@ -1,0 +1,16 @@
+{
+  "name": "taskify",
+  "version": "1.0.0",
+  "description": "Taskify Project",
+  "main": "src/js/app.js",
+  "scripts": {
+    "build": "lessc src/styles/styles.less src/styles/styles.css",
+    "watch": "less-watch-compiler src/styles"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "less": "^3.13.1",
+    "less-watch-compiler": "^1.17.13"
+  }
+}
