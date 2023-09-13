@@ -1,0 +1,68 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #007acc;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.task-form {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+.task-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.task-list {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: calc(33.33% - 1rem);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.task-list h2 {
+  color: #007acc;
+}
+/* Task item styles (customize as needed) */
+.task-item {
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  cursor: grab;
+}
+/* Custom colors for task states (customize as needed) */
+#in-progress-list {
+  border-left: 4px solid #ff9900;
+  /* Orange for "In Progress" */
+}
+#started-list {
+  border-left: 4px solid #339900;
+  /* Green for "Started" */
+}
+#completed-list {
+  border-left: 4px solid #0099cc;
+  /* Blue for "Completed" */
+}
