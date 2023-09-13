@@ -31,3 +31,40 @@ function createTaskElement(title, description, dueDate) {
 }
 
 
+
+// Function to add a new task to the "In Progress" list
+function addTaskToInProgress(title, description, dueDate) {
+  const taskElement = createTaskElement(title, description, dueDate);
+  inProgressList.appendChild(taskElement);
+}
+
+// Function to handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const titleInput = document.getElementById('task-title');
+  const descriptionInput = document.getElementById('task-description');
+  const dueDateInput = document.getElementById('task-due-date');
+
+  const title = titleInput.value;
+  const description = descriptionInput.value;
+  const dueDate = dueDateInput.value;
+
+  if (title.trim() === '') {
+    alert('Please enter a task title.');
+    return;
+  }
+
+  // Add the task to "In Progress" list
+  addTaskToInProgress(title, description, dueDate);
+
+  // Clear form inputs
+  titleInput.value = '';
+  descriptionInput.value = '';
+  dueDateInput.value = '';
+}
+
+// Event listener for form submission
+taskForm.addEventListener('submit', handleFormSubmit);
+
+
