@@ -14,4 +14,20 @@ function createTaskElement(title, description, dueDate) {
   taskDiv.draggable = true;
   taskDiv.id = `task-${taskIdCounter}`;
   taskIdCounter++;
+
+  // Task content
+  taskDiv.innerHTML = `
+    <h3>${title}</h3>
+    <p>${description}</p>
+    <p>Due Date: ${dueDate || 'Not specified'}</p>
+  `;
+
+  // Event listeners for drag-and-drop
+  taskDiv.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', taskDiv.id);
+  });
+
+  return taskDiv;
 }
+
+
