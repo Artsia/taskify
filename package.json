@@ -5,12 +5,16 @@
   "main": "src/js/app.js",
   "scripts": {
     "build": "lessc src/styles/styles.less src/styles/styles.css",
-    "watch": "less-watch-compiler src/styles"
+    "watch": "less-watch-compiler src/styles src/styles"
   },
-  "author": "Your Name",
+  "author": "Phillip Kataswa",
   "license": "MIT",
+  "devDependencies": {
+    "less": "^4.2.0",
+    "less-watch-compiler": "^1.16.3"
+  },
   "dependencies": {
-    "less": "^3.13.1",
-    "less-watch-compiler": "^1.17.13"
+    "backbone": "^1.5.0",
+    "mustache": "^4.2.0"
   }
 }
