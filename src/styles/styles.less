@@ -18,6 +18,8 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem;
+    width: auto;
+    height: auto;
   }
   
   .task-form {
@@ -26,8 +28,21 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin-bottom: 1rem;
+  }
+
+  #task-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  //text-area
+  #task-description{
+    max-width:100%; /*so it does not go onto to the side of form when user expands area*/
+    max-height:40%;
+
   }
   
   .task-lists {
@@ -63,14 +78,14 @@ body {
   
   /* Custom colors for task states (customize as needed) */
   #in-progress-list {
-    border-left: 4px solid #ff9900; /* Orange for "In Progress" */
+    border-left: 4px solid #f30707c7; /* red for "In Progress" */
   }
   
   #started-list {
-    border-left: 4px solid #339900; /* Green for "Started" */
+    border-left: 4px solid #ea9d03; /* orange for "Started" */
   }
   
   #completed-list {
-    border-left: 4px solid #0099cc; /* Blue for "Completed" */
+    border-left: 4px solid #00cc2c; /* green for "Completed" */
   }
   
