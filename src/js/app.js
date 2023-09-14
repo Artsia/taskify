@@ -17,9 +17,11 @@ function createTaskElement(title, description, dueDate) {
 
   // Task content
   taskDiv.innerHTML = `
-    <h3>${title}</h3>
-    <p>${description}</p>
-    <p>Due Date: ${dueDate || 'Not specified'}</p>
+    
+      <h3>${title}</h3>
+      <p>${description}</p>
+      <p>Due Date: ${dueDate || 'Not specified'}</p>
+    
   `;
 
   // Event listeners for drag-and-drop
@@ -28,14 +30,6 @@ function createTaskElement(title, description, dueDate) {
   });
 
   return taskDiv;
-}
-
-
-
-// Function to add a new task to the "In Progress" list
-function addTaskToInProgress(title, description, dueDate) {
-  const taskElement = createTaskElement(title, description, dueDate);
-  inProgressList.appendChild(taskElement);
 }
 
 // Function to handle form submission
@@ -64,7 +58,67 @@ function handleFormSubmit(event) {
   dueDateInput.value = '';
 }
 
+// Function to add a new task to the "In Progress" list
+function addTaskToInProgress(title, description, dueDate) {
+  const taskElement = createTaskElement(title, description, dueDate);
+  inProgressList.appendChild(taskElement);
+}
+
 // Event listener for form submission
 taskForm.addEventListener('submit', handleFormSubmit);
+
+
+//Code bellow does not work
+
+// Event listeners for drag-and-drop functionality
+inProgressList.addEventListener('dragover', (e) => {
+  e.preventDefault();
+});
+
+inProgressList.addEventListener('drop', (e) => {
+  const taskId = e.dataTransfer.getData('text/plain');
+  const taskElement = document.getElementById(taskId);
+  inProgressList.appendChild(taskElement);
+});
+
+startedList.addEventListener('dragover', (e) => {
+  e.preventDefault();
+});
+
+startedList.addEventListener('drop', (e) => {
+  const taskId = e.dataTransfer.getData('text/plain');
+  const taskElement = document.getElementById(taskId);
+  startedList.appendChild(taskElement);
+});
+
+completedList.addEventListener('dragover', (e) => {
+  e.preventDefault();
+});
+
+completedList.addEventListener('drop', (e) => {
+  const taskId = e.dataTransfer.getData('text/plain');
+  const taskElement = document.getElementById(taskId);
+  completedList.appendChild(taskElement);
+}); 
+
+// Function to move a task to the "Completed" list
+function moveTaskToCompleted(taskId) {
+  const taskElement = document.getElementById(taskId);
+  completedList.appendChild(taskElement);
+}
+
+// Event listener for drag-and-drop functionality on "Completed" list
+completedList.addEventListener('dragover', (e) => {
+  e.preventDefault();
+});
+
+completedList.addEventListener('drop', (e) => {
+  const taskId = e.dataTransfer.getData('text/plain');
+  const taskElement = document.getElementById(taskId);
+  moveTaskToCompleted(taskId);
+});
+
+// ... (Rest of the previous code)
+
 
 
