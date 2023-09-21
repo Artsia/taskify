@@ -17,11 +17,10 @@ function createTaskElement(title, description, dueDate) {
 
   // Task content
   taskDiv.innerHTML = `
-    
-      <h3>${title}</h3>
-      <p>${description}</p>
-      <p>Due Date: ${dueDate || 'Not specified'}</p>
-    
+  
+    <h3>${title}</h3>
+    <p>${description}</p>
+    <p>Due Date: ${dueDate || 'Not specified'}</p>
   `;
 
   // Event listeners for drag-and-drop
