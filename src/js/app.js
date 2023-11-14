@@ -67,57 +67,8 @@ function addTaskToInProgress(title, description, dueDate) {
 taskForm.addEventListener('submit', handleFormSubmit);
 
 
-//Code bellow does not work
 
-// Event listeners for drag-and-drop functionality
-inProgressList.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
 
-inProgressList.addEventListener('drop', (e) => {
-  const taskId = e.dataTransfer.getData('text/plain');
-  const taskElement = document.getElementById(taskId);
-  inProgressList.appendChild(taskElement);
-});
-
-startedList.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
-
-startedList.addEventListener('drop', (e) => {
-  const taskId = e.dataTransfer.getData('text/plain');
-  const taskElement = document.getElementById(taskId);
-  startedList.appendChild(taskElement);
-});
-
-completedList.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
-
-completedList.addEventListener('drop', (e) => {
-  const taskId = e.dataTransfer.getData('text/plain');
-  const taskElement = document.getElementById(taskId);
-  completedList.appendChild(taskElement);
-}); 
-
-// Function to move a task to the "Completed" list
-function moveTaskToCompleted(taskId) {
-  const taskElement = document.getElementById(taskId);
-  completedList.appendChild(taskElement);
-}
-
-// Event listener for drag-and-drop functionality on "Completed" list
-completedList.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
-
-completedList.addEventListener('drop', (e) => {
-  const taskId = e.dataTransfer.getData('text/plain');
-  const taskElement = document.getElementById(taskId);
-  moveTaskToCompleted(taskId);
-});
-
-// ... (Rest of the previous code)
 
 
 
